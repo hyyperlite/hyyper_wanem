@@ -54,12 +54,16 @@ def get_bandwidth(interface):
         bandwidth_kbit = int(match.group(1).replace('Kbit', ''))
     else:
         # If no bandwidth is set, retrieve the negotiated speed using ethtool
-        result = subprocess.run(['ethtool', interface], capture_output=True, text=True)
-        output = result.stdout
-        match = re.search(r'Speed: (\d+)', output)
-        if match:
-            bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
-        else:
+        try:
+            result = subprocess.run(['ethtool', interface], capture_output=True, text=True, check=True)
+            output = result.stdout
+            match = re.search(r'Speed: (\d+)', output)
+            if match:
+                bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
+            else:
+                return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            # ethtool is not installed or failed to run
             return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
 
     bandwidth = {
