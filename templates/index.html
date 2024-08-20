@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Degradation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Network Interfaces</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Interface</th>
+                    <th>IP Address</th>
+                    <th>Latency</th>
+                    <th>Loss</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for interface in interfaces %}
+                <tr>
+                    <td>{{ interface.name }}</td>
+                    <td>{{ interface.ip }}</td>
+                    <td>{{ interface.latency }}</td>
+                    <td>{{ interface.loss }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <form action="{{ url_for('apply') }}" method="post">
+            <label for="interface">Select Interface:</label>
+            <select name="interface" id="interface">
+                {% for interface in interfaces %}
+                    <option value="{{ interface.name }}">{{ interface.name }} ({{ interface.ip }})</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="latency">Latency (e.g., 100ms):</label>
+            <input type="text" id="latency" name="latency">
+            <br>
+            <label for="loss">Packet Loss (e.g., 1%):</label>
+            <input type="text" id="loss" name="loss">
+            <br>
+            <button type="submit">Apply</button>
+        </form>
+        <br>
+        <form action="{{ url_for('remove') }}" method="post">
+            <label for="interface">Select Interface to Remove Degradations:</label>
+            <select name="interface" id="interface">
+                {% for interface in interfaces %}
+                    <option value="{{ interface.name }}">{{ interface.name }} ({{ interface.ip }})</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Remove Degradations</button>
+        </form>
+    </div>
+</body>
+</html>
