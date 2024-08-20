@@ -26,7 +26,8 @@ def list_interfaces():
         if ip_address:
             latency = get_latency(interface_name)
             loss = get_loss(interface_name)
-            interfaces.append({'name': interface_name, 'ip': ip_address, 'latency': latency, 'loss': loss})
+            bandwidth = get_bandwidth(interface_name)
+            interfaces.append({'name': interface_name, 'ip': ip_address, 'latency': latency, 'loss': loss, 'bandwidth': bandwidth})
 
     return interfaces
 
@@ -42,6 +43,12 @@ def get_loss(interface):
     match = re.search(r'loss (\d+)%', output)
     return match.group(1) + '%' if match else '0%'
 
+def get_bandwidth(interface):
+    result = subprocess.run(['tc', 'class', 'show', 'dev', interface], capture_output=True, text=True)
+    output = result.stdout
+    match = re.search(r'rate (\d+Kbit)', output)
+    return match.group(1) if match else 'N/A'
+
 def apply_latency(interface, latency):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
     if result.returncode != 0:
@@ -51,6 +58,14 @@ def apply_loss(interface, loss):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
     if result.returncode != 0:
         flash(f"Error applying loss: {result.stderr}")
+
+def apply_bandwidth(interface, bandwidth):
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], capture_output=True, text=True)
+    if result.returncode != 0:
+        flash(f"Error setting up root qdisc: {result.stderr}")
+    result = subprocess.run(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], capture_output=True, text=True)
+    if result.returncode != 0:
+        flash(f"Error applying bandwidth: {result.stderr}")
 
 def remove_degradations(interface):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
@@ -62,20 +77,23 @@ def index():
     interfaces = list_interfaces()
     return render_template('index.html', interfaces=interfaces)
 
-@app.route('/apply', methods=['POST'])
+@app.route('/apply', methods=['POST'], endpoint='apply_interface')
 def apply():
     interface = request.form['interface'].split(' ')[0]  # Extract the interface name
     latency = request.form.get('latency')
     loss = request.form.get('loss')
+    bandwidth = request.form.get('bandwidth')
     
     if latency:
         apply_latency(interface, latency)
     if loss:
         apply_loss(interface, loss)
+    if bandwidth:
+        apply_bandwidth(interface, bandwidth)
     
     return redirect(url_for('index'))
 
-@app.route('/remove', methods=['POST'])
+@app.route('/remove', methods=['POST'], endpoint='remove_interface')
 def remove():
     interface = request.form['interface'].split(' ')[0]  # Extract the interface name
     remove_degradations(interface)

@@ -2,60 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Network Degradation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Interface Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Network Interfaces</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Interface</th>
-                    <th>IP Address</th>
-                    <th>Latency</th>
-                    <th>Loss</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for interface in interfaces %}
-                <tr>
-                    <td>{{ interface.name }}</td>
-                    <td>{{ interface.ip }}</td>
-                    <td>{{ interface.latency }}</td>
-                    <td>{{ interface.loss }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <br>
-        <form action="{{ url_for('apply') }}" method="post">
-            <label for="interface">Select Interface:</label>
-            <select name="interface" id="interface">
-                {% for interface in interfaces %}
-                    <option value="{{ interface.name }}">{{ interface.name }} ({{ interface.ip }})</option>
-                {% endfor %}
-            </select>
-            <br>
-            <label for="latency">Latency (e.g., 100ms):</label>
-            <input type="text" id="latency" name="latency">
-            <br>
-            <label for="loss">Packet Loss (e.g., 1%):</label>
-            <input type="text" id="loss" name="loss">
-            <br>
-            <button type="submit">Apply</button>
-        </form>
-        <br>
-        <form action="{{ url_for('remove') }}" method="post">
-            <label for="interface">Select Interface to Remove Degradations:</label>
-            <select name="interface" id="interface">
-                {% for interface in interfaces %}
-                    <option value="{{ interface.name }}">{{ interface.name }} ({{ interface.ip }})</option>
-                {% endfor %}
-            </select>
-            <br>
-            <button type="submit">Remove Degradations</button>
-        </form>
-    </div>
+    <h1>Network Interface Management</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Interface</th>
+                <th>IP Address</th>
+                <th>Latency</th>
+                <th>Loss</th>
+                <th>Bandwidth</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interface in interfaces %}
+            <tr>
+                <td>{{ interface.name }}</td>
+                <td>{{ interface.ip }}</td>
+                <td>{{ interface.latency }}</td>
+                <td>{{ interface.loss }}</td>
+                <td>{{ interface.bandwidth }}</td>
+                <td>
+                    <form action="{{ url_for('apply_interface') }}" method="post">
+                        <input type="hidden" name="interface" value="{{ interface.name }}">
+                        <input type="text" name="latency" placeholder="Latency (e.g., 100ms)">
+                        <input type="text" name="loss" placeholder="Loss (e.g., 1%)">
+                        <input type="text" name="bandwidth" placeholder="Bandwidth (e.g., 1000Kbit)">
+                        <button type="submit">Apply</button>
+                    </form>
+                    <form action="{{ url_for('remove_interface') }}" method="post">
+                        <input type="hidden" name="interface" value="{{ interface.name }}">
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
