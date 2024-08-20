@@ -4,16 +4,25 @@ import json
 import re
 import os
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()  # Load environment variables from .env
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for flashing messages
 
+# Configure logging
+logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
+def log_command(command, output):
+    logging.info(f"Command: {' '.join(command)}")
+    logging.info(f"Output: {output}")
+
 def list_interfaces():
     interfaces = []
     result = subprocess.run(['ip', '-j', 'addr'], capture_output=True, text=True)
     output = result.stdout
+    log_command(['ip', '-j', 'addr'], output)
     data = json.loads(output)
 
     for interface in data:
@@ -37,18 +46,21 @@ def list_interfaces():
 def get_latency(interface):
     result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
+    log_command(['tc', 'qdisc', 'show', 'dev', interface], output)
     match = re.search(r'delay (\d+ms)', output)
     return match.group(1) if match else '0ms'
 
 def get_loss(interface):
     result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
+    log_command(['tc', 'qdisc', 'show', 'dev', interface], output)
     match = re.search(r'loss (\d+)%', output)
     return match.group(1) + '%' if match else '0%'
 
 def get_bandwidth(interface):
     result = subprocess.run(['tc', 'class', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
+    log_command(['tc', 'class', 'show', 'dev', interface], output)
     match = re.search(r'rate (\d+Kbit)', output)
     if match:
         bandwidth_kbit = int(match.group(1).replace('Kbit', ''))
@@ -57,13 +69,15 @@ def get_bandwidth(interface):
         try:
             result = subprocess.run(['ethtool', interface], capture_output=True, text=True, check=True)
             output = result.stdout
+            log_command(['ethtool', interface], output)
             match = re.search(r'Speed: (\d+)', output)
             if match:
                 bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
             else:
                 return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
-        except (subprocess.CalledProcessError, FileNotFoundError):
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
             # ethtool is not installed or failed to run
+            log_command(['ethtool', interface], str(e))
             return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
 
     bandwidth = {
@@ -75,24 +89,29 @@ def get_bandwidth(interface):
 
 def apply_latency(interface, latency):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], result.stdout)
     if result.returncode != 0:
         flash(f"Error applying latency: {result.stderr}")
 
 def apply_loss(interface, loss):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], result.stdout)
     if result.returncode != 0:
         flash(f"Error applying loss: {result.stderr}")
 
 def apply_bandwidth(interface, bandwidth):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], result.stdout)
     if result.returncode != 0:
         flash(f"Error setting up root qdisc: {result.stderr}")
     result = subprocess.run(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], result.stdout)
     if result.returncode != 0:
         flash(f"Error applying bandwidth: {result.stderr}")
 
 def remove_degradations(interface):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], result.stdout)
     if result.returncode != 0:
         flash(f"Error removing degradations: {result.stderr}")
 
@@ -124,6 +143,6 @@ def remove():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    host = os.getenv('FLASK_RUN_HOST', '127.0.0.1')
-    port = int(os.getenv('FLASK_RUN_PORT', 5000))
+    host = os.getenv('FLASK_RUN_HOST', '0.0.0.0')
+    port = int(os.getenv('FLASK_RUN_PORT', 8080))
     app.run(host=host, port=port, debug=True)
