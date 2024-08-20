@@ -61,8 +61,8 @@ def get_bandwidth(interface):
 
     bandwidth = {
         'Kb': f"{bandwidth_kbit} Kb",
-        'Mb': f"{bandwidth_kbit / 1000:.2f} Mb",
-        'Gb': f"{bandwidth_kbit / 1000000:.2f} Gb"
+        'Mb': f"{round(bandwidth_kbit / 1000)} Mb",
+        'Gb': f"{round(bandwidth_kbit / 1000000)} Gb"
     }
     return bandwidth
 
