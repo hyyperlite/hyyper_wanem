@@ -48,13 +48,23 @@ def get_bandwidth(interface):
     output = result.stdout
     match = re.search(r'rate (\d+Kbit)', output)
     if match:
-        return match.group(1)
+        bandwidth_kbit = int(match.group(1).replace('Kbit', ''))
     else:
         # If no bandwidth is set, retrieve the negotiated speed using ethtool
         result = subprocess.run(['ethtool', interface], capture_output=True, text=True)
         output = result.stdout
-        match = re.search(r'Speed: (\d+Mb/s)', output)
-        return match.group(1) if match else 'N/A'
+        match = re.search(r'Speed: (\d+)', output)
+        if match:
+            bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
+        else:
+            return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
+
+    bandwidth = {
+        'Kb': f"{bandwidth_kbit} Kb",
+        'Mb': f"{bandwidth_kbit / 1000:.2f} Mb",
+        'Gb': f"{bandwidth_kbit / 1000000:.2f} Gb"
+    }
+    return bandwidth
 
 def apply_latency(interface, latency):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)

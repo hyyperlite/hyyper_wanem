@@ -26,7 +26,11 @@
                 <td>{{ interface.ip }}</td>
                 <td>{{ interface.latency }}</td>
                 <td>{{ interface.loss }}</td>
-                <td>{{ interface.bandwidth }}</td>
+                <td>
+                    {{ interface.bandwidth.Kb }}<br>
+                    {{ interface.bandwidth.Mb }}<br>
+                    {{ interface.bandwidth.Gb }}
+                </td>
                 <td>
                     <form action="{{ url_for('apply_interface') }}" method="post">
                         <input type="hidden" name="interface" value="{{ interface.name }}">
