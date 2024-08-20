@@ -18,6 +18,9 @@ def list_interfaces():
 
     for interface in data:
         interface_name = interface['ifname']
+        if interface_name == 'lo':
+            continue  # Skip interfaces with the name 'lo'
+        
         ip_address = None
         for addr_info in interface.get('addr_info', []):
             if addr_info['family'] == 'inet':
