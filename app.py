@@ -1,9 +1,14 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import subprocess
 import json
 import re
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Needed for flashing messages
 
 def list_interfaces():
     interfaces = []
@@ -38,13 +43,19 @@ def get_loss(interface):
     return match.group(1) + '%' if match else '0%'
 
 def apply_latency(interface, latency):
-    subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency])
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
+    if result.returncode != 0:
+        flash(f"Error applying latency: {result.stderr}")
 
 def apply_loss(interface, loss):
-    subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss])
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
+    if result.returncode != 0:
+        flash(f"Error applying loss: {result.stderr}")
 
 def remove_degradations(interface):
-    subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'])
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
+    if result.returncode != 0:
+        flash(f"Error removing degradations: {result.stderr}")
 
 @app.route('/')
 def index():
@@ -71,4 +82,6 @@ def remove():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    host = os.getenv('FLASK_RUN_HOST', '127.0.0.1')
+    port = int(os.getenv('FLASK_RUN_PORT', 5000))
+    app.run(host=host, port=port, debug=True)
