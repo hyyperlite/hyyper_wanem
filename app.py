@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 import logging
 
 load_dotenv()  # Load environment variables from .env
-
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for flashing messages
 
@@ -88,32 +87,55 @@ def get_bandwidth(interface):
     return bandwidth
 
 def apply_latency(interface, latency):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error applying latency: {result.stderr}")
+    if latency:
+        remove_latency(interface)  # Remove existing latency setting
+        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
+        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], result.stdout)
+        if result.returncode != 0:
+            flash(f"Error applying latency: {result.stderr}")
 
 def apply_loss(interface, loss):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error applying loss: {result.stderr}")
+    if loss:
+        remove_loss(interface)  # Remove existing loss setting
+        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
+        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], result.stdout)
+        if result.returncode != 0:
+            flash(f"Error applying loss: {result.stderr}")
 
 def apply_bandwidth(interface, bandwidth):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], result.stdout)
+    if bandwidth:
+        remove_bandwidth(interface)  # Remove existing bandwidth setting
+        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], capture_output=True, text=True)
+        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], result.stdout)
+        if result.returncode != 0:
+            flash(f"Error setting up root qdisc: {result.stderr}")
+        result = subprocess.run(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], capture_output=True, text=True)
+        log_command(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], result.stdout)
+        if result.returncode != 0:
+            flash(f"Error applying bandwidth: {result.stderr}")
+
+def remove_latency(interface):
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
     if result.returncode != 0:
-        flash(f"Error setting up root qdisc: {result.stderr}")
-    result = subprocess.run(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], result.stdout)
+        flash(f"Error removing latency: {result.stderr}")
+
+def remove_loss(interface):
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
     if result.returncode != 0:
-        flash(f"Error applying bandwidth: {result.stderr}")
+        flash(f"Error removing loss: {result.stderr}")
+
+def remove_bandwidth(interface):
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], result.stdout)
+    if result.returncode != 0:
+        flash(f"Error removing bandwidth: {result.stderr}")
 
 def remove_degradations(interface):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error removing degradations: {result.stderr}")
+    remove_latency(interface)
+    remove_loss(interface)
+    remove_bandwidth(interface)
 
 @app.route('/')
 def index():
