@@ -98,6 +98,11 @@ def get_qdisc_settings(interface):
 
 def apply_qdisc(interface, latency=None, loss=None):
     current_latency, current_loss = get_qdisc_settings(interface)
+    
+    # Ensure latency is in milliseconds
+    if latency and not latency.endswith(('ms', 'us')):
+        latency += 'ms'
+    
     latency = latency if latency else current_latency
     loss = loss if loss else current_loss
 
@@ -111,7 +116,8 @@ def apply_qdisc(interface, latency=None, loss=None):
     log_command(command, result.stdout)
     if result.returncode != 0:
         flash(f"Error applying qdisc: {result.stderr}")
-
+        
+        
 def apply_bandwidth(interface, bandwidth):
     if bandwidth:
         remove_bandwidth(interface)  # Remove existing bandwidth setting
