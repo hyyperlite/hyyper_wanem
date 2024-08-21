@@ -60,9 +60,9 @@ def get_bandwidth(interface):
     result = subprocess.run(['tc', 'class', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
     log_command(['tc', 'class', 'show', 'dev', interface], output)
-    match = re.search(r'rate (\d+Kbit)', output)
+    match = re.search(r'rate (\d+Mb/s)', output)
     if match:
-        bandwidth_kbit = int(match.group(1).replace('Kbit', ''))
+        bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
     else:
         # If no bandwidth is set, retrieve the negotiated speed using ethtool
         try:
