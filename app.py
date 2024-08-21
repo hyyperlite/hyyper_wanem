@@ -46,7 +46,7 @@ def get_latency(interface):
     result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
     log_command(['tc', 'qdisc', 'show', 'dev', interface], output)
-    match = re.search(r'delay (\d+ms)', output)
+    match = re.search(r'delay (\d+ms|\d+us)', output)
     return match.group(1) if match else '0ms'
 
 def get_loss(interface):
