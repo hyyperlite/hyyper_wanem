@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
 import subprocess
 import json
 import re
 import os
+from flask import Flask, render_template, request, redirect, url_for, flash
 from dotenv import load_dotenv
 import logging
 
@@ -86,21 +86,31 @@ def get_bandwidth(interface):
     }
     return bandwidth
 
-def apply_latency(interface, latency):
-    if latency:
-        remove_latency(interface)  # Remove existing latency setting
-        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], capture_output=True, text=True)
-        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'delay', latency], result.stdout)
-        if result.returncode != 0:
-            flash(f"Error applying latency: {result.stderr}")
+def get_qdisc_settings(interface):
+    result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
+    output = result.stdout
+    log_command(['tc', 'qdisc', 'show', 'dev', interface], output)
+    latency_match = re.search(r'delay (\d+ms|\d+us)', output)
+    loss_match = re.search(r'loss (\d+)%', output)
+    latency = latency_match.group(1) if latency_match else '0ms'
+    loss = loss_match.group(1) + '%' if loss_match else '0%'
+    return latency, loss
 
-def apply_loss(interface, loss):
-    if loss:
-        remove_loss(interface)  # Remove existing loss setting
-        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], capture_output=True, text=True)
-        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'netem', 'loss', loss], result.stdout)
-        if result.returncode != 0:
-            flash(f"Error applying loss: {result.stderr}")
+def apply_qdisc(interface, latency=None, loss=None):
+    current_latency, current_loss = get_qdisc_settings(interface)
+    latency = latency if latency else current_latency
+    loss = loss if loss else current_loss
+
+    command = ['sudo', 'tc', 'qdisc', 'replace', 'dev', interface, 'root', 'netem']
+    if latency != '0ms':
+        command.extend(['delay', latency])
+    if loss != '0%':
+        command.extend(['loss', loss])
+
+    result = subprocess.run(command, capture_output=True, text=True)
+    log_command(command, result.stdout)
+    if result.returncode != 0:
+        flash(f"Error applying qdisc: {result.stderr}")
 
 def apply_bandwidth(interface, bandwidth):
     if bandwidth:
@@ -114,18 +124,6 @@ def apply_bandwidth(interface, bandwidth):
         if result.returncode != 0:
             flash(f"Error applying bandwidth: {result.stderr}")
 
-def remove_latency(interface):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error removing latency: {result.stderr}")
-
-def remove_loss(interface):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error removing loss: {result.stderr}")
-
 def remove_bandwidth(interface):
     result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], capture_output=True, text=True)
     log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], result.stdout)
@@ -133,8 +131,10 @@ def remove_bandwidth(interface):
         flash(f"Error removing bandwidth: {result.stderr}")
 
 def remove_degradations(interface):
-    remove_latency(interface)
-    remove_loss(interface)
+    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
+    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
+    if result.returncode != 0:
+        flash(f"Error removing qdisc: {result.stderr}")
     remove_bandwidth(interface)
 
 @app.route('/')
@@ -149,10 +149,8 @@ def apply():
     loss = request.form.get('loss')
     bandwidth = request.form.get('bandwidth')
     
-    if latency:
-        apply_latency(interface, latency)
-    if loss:
-        apply_loss(interface, loss)
+    if latency or loss:
+        apply_qdisc(interface, latency, loss)
     if bandwidth:
         apply_bandwidth(interface, bandwidth)
     
