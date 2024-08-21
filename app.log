@@ -1525,3 +1525,3651 @@ class mq :40 root
 
 2024-08-21 15:21:00,745 - 127.0.0.1 - - [21/Aug/2024 15:21:00] "GET / HTTP/1.1" 200 -
 2024-08-21 15:21:00,759 - 127.0.0.1 - - [21/Aug/2024 15:21:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 15:26:49,635 -  * Detected change in '/home/hyyperlite/dev/hyyper_wanem/app.py', reloading
+2024-08-21 15:26:49,658 -  * Restarting with stat
+2024-08-21 15:26:49,741 -  * Debugger is active!
+2024-08-21 15:26:49,741 -  * Debugger PIN: 426-763-970
+2024-08-21 15:35:36,889 -  * Detected change in '/home/hyyperlite/dev/hyyper_wanem/app.py', reloading
+2024-08-21 15:35:36,914 -  * Restarting with stat
+2024-08-21 15:35:37,063 -  * Debugger is active!
+2024-08-21 15:35:37,064 -  * Debugger PIN: 426-763-970
+2024-08-21 15:38:25,441 -  * Detected change in '/home/hyyperlite/dev/hyyper_wanem/app.py', reloading
+2024-08-21 15:38:25,461 -  * Restarting with stat
+2024-08-21 15:38:25,546 -  * Debugger is active!
+2024-08-21 15:38:25,546 -  * Debugger PIN: 426-763-970
+2024-08-21 15:38:50,540 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 15:38:50,540 - [33mPress CTRL+C to quit[0m
+2024-08-21 15:38:50,540 -  * Restarting with stat
+2024-08-21 15:38:50,622 -  * Debugger is active!
+2024-08-21 15:38:50,623 -  * Debugger PIN: 426-763-970
+2024-08-21 16:02:02,619 - Command: ip -j addr
+2024-08-21 16:02:02,619 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:02,624 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:02,624 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:02,625 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:02,625 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:02,626 - Command: tc class show dev eth0
+2024-08-21 16:02:02,627 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:02,637 - Command: ethtool eth0
+2024-08-21 16:02:02,637 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:02,642 - 127.0.0.1 - - [21/Aug/2024 16:02:02] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:02,659 - 127.0.0.1 - - [21/Aug/2024 16:02:02] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:02:03,744 - Command: ip -j addr
+2024-08-21 16:02:03,744 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:03,745 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:03,745 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:03,746 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:03,746 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:03,747 - Command: tc class show dev eth0
+2024-08-21 16:02:03,747 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:03,752 - Command: ethtool eth0
+2024-08-21 16:02:03,752 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:03,752 - 127.0.0.1 - - [21/Aug/2024 16:02:03] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:03,767 - 127.0.0.1 - - [21/Aug/2024 16:02:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:02:04,551 - Command: ip -j addr
+2024-08-21 16:02:04,551 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:04,552 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:04,552 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:04,553 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:04,554 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:04,555 - Command: tc class show dev eth0
+2024-08-21 16:02:04,555 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:04,559 - Command: ethtool eth0
+2024-08-21 16:02:04,559 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:04,560 - 127.0.0.1 - - [21/Aug/2024 16:02:04] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:04,571 - 127.0.0.1 - - [21/Aug/2024 16:02:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:02:05,263 - Command: ip -j addr
+2024-08-21 16:02:05,263 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:05,264 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:05,264 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:05,265 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:05,265 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:05,266 - Command: tc class show dev eth0
+2024-08-21 16:02:05,267 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:05,271 - Command: ethtool eth0
+2024-08-21 16:02:05,271 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:05,272 - 127.0.0.1 - - [21/Aug/2024 16:02:05] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:05,289 - 127.0.0.1 - - [21/Aug/2024 16:02:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:02:05,778 - Command: ip -j addr
+2024-08-21 16:02:05,778 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:05,779 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:05,779 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:05,780 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:05,780 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:05,781 - Command: tc class show dev eth0
+2024-08-21 16:02:05,781 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:05,786 - Command: ethtool eth0
+2024-08-21 16:02:05,786 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:05,786 - 127.0.0.1 - - [21/Aug/2024 16:02:05] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:05,798 - 127.0.0.1 - - [21/Aug/2024 16:02:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:02:06,393 - Command: ip -j addr
+2024-08-21 16:02:06,393 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:02:06,394 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:06,394 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:06,396 - Command: tc qdisc show dev eth0
+2024-08-21 16:02:06,396 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:02:06,397 - Command: tc class show dev eth0
+2024-08-21 16:02:06,397 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:02:06,402 - Command: ethtool eth0
+2024-08-21 16:02:06,402 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:02:06,402 - 127.0.0.1 - - [21/Aug/2024 16:02:06] "GET / HTTP/1.1" 200 -
+2024-08-21 16:02:06,418 - 127.0.0.1 - - [21/Aug/2024 16:02:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:07:11,044 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:07:11,044 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:07:11,044 -  * Restarting with stat
+2024-08-21 16:07:11,140 -  * Debugger is active!
+2024-08-21 16:07:11,140 -  * Debugger PIN: 426-763-970
+2024-08-21 16:07:16,712 - Command: ip -j addr
+2024-08-21 16:07:16,712 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:07:16,713 - Command: tc qdisc show dev eth0
+2024-08-21 16:07:16,713 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:07:16,714 - Command: tc qdisc show dev eth0
+2024-08-21 16:07:16,714 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:07:16,715 - Command: tc class show dev eth0
+2024-08-21 16:07:16,716 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:07:16,721 - Command: ethtool eth0
+2024-08-21 16:07:16,721 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:07:16,725 - 127.0.0.1 - - [21/Aug/2024 16:07:16] "GET / HTTP/1.1" 200 -
+2024-08-21 16:07:16,749 - 127.0.0.1 - - [21/Aug/2024 16:07:16] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:08:52,510 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:08:52,510 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:08:52,511 -  * Restarting with stat
+2024-08-21 16:08:52,593 -  * Debugger is active!
+2024-08-21 16:08:52,594 -  * Debugger PIN: 426-763-970
+2024-08-21 16:08:57,548 - Command: ip -j addr
+2024-08-21 16:08:57,548 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:08:57,549 - Command: tc qdisc show dev eth0
+2024-08-21 16:08:57,549 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:08:57,551 - Command: tc qdisc show dev eth0
+2024-08-21 16:08:57,551 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:08:57,552 - Command: tc class show dev eth0
+2024-08-21 16:08:57,552 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:08:57,557 - Command: ethtool eth0
+2024-08-21 16:08:57,557 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:08:57,560 - 127.0.0.1 - - [21/Aug/2024 16:08:57] "GET / HTTP/1.1" 200 -
+2024-08-21 16:08:57,583 - 127.0.0.1 - - [21/Aug/2024 16:08:57] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:09:26,384 - Command: ip -j addr
+2024-08-21 16:09:26,384 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:09:26,385 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:26,385 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:26,386 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:26,387 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:26,388 - Command: tc class show dev eth0
+2024-08-21 16:09:26,388 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:09:26,395 - Command: ethtool eth0
+2024-08-21 16:09:26,395 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:09:26,396 - 127.0.0.1 - - [21/Aug/2024 16:09:26] "GET / HTTP/1.1" 200 -
+2024-08-21 16:09:26,408 - 127.0.0.1 - - [21/Aug/2024 16:09:26] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:09:31,862 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:09:31,863 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:09:31,863 -  * Restarting with stat
+2024-08-21 16:09:31,959 -  * Debugger is active!
+2024-08-21 16:09:31,960 -  * Debugger PIN: 426-763-970
+2024-08-21 16:09:39,821 - Command: ip -j addr
+2024-08-21 16:09:39,821 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:09:39,822 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:39,822 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:39,823 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:39,823 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:39,824 - Command: tc class show dev eth0
+2024-08-21 16:09:39,824 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:09:39,828 - Command: ethtool eth0
+2024-08-21 16:09:39,828 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:09:39,832 - 127.0.0.1 - - [21/Aug/2024 16:09:39] "GET / HTTP/1.1" 200 -
+2024-08-21 16:09:39,847 - 127.0.0.1 - - [21/Aug/2024 16:09:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:09:41,005 - Command: ip -j addr
+2024-08-21 16:09:41,005 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:09:41,006 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:41,006 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:41,007 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:41,008 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:41,009 - Command: tc class show dev eth0
+2024-08-21 16:09:41,009 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:09:41,013 - Command: ethtool eth0
+2024-08-21 16:09:41,013 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:09:41,013 - 127.0.0.1 - - [21/Aug/2024 16:09:41] "GET / HTTP/1.1" 200 -
+2024-08-21 16:09:41,026 - 127.0.0.1 - - [21/Aug/2024 16:09:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:09:41,822 - Command: ip -j addr
+2024-08-21 16:09:41,822 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:09:41,824 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:41,824 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:41,825 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:41,825 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:41,826 - Command: tc class show dev eth0
+2024-08-21 16:09:41,826 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:09:41,830 - Command: ethtool eth0
+2024-08-21 16:09:41,830 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:09:41,830 - 127.0.0.1 - - [21/Aug/2024 16:09:41] "GET / HTTP/1.1" 200 -
+2024-08-21 16:09:41,845 - 127.0.0.1 - - [21/Aug/2024 16:09:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:09:42,773 - Command: ip -j addr
+2024-08-21 16:09:42,774 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:09:42,775 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:42,775 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:42,776 - Command: tc qdisc show dev eth0
+2024-08-21 16:09:42,776 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:09:42,777 - Command: tc class show dev eth0
+2024-08-21 16:09:42,777 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:09:42,781 - Command: ethtool eth0
+2024-08-21 16:09:42,781 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:09:42,782 - 127.0.0.1 - - [21/Aug/2024 16:09:42] "GET / HTTP/1.1" 200 -
+2024-08-21 16:09:42,793 - 127.0.0.1 - - [21/Aug/2024 16:09:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:10:03,174 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:10:03,174 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:10:03,175 -  * Restarting with stat
+2024-08-21 16:10:03,273 -  * Debugger is active!
+2024-08-21 16:10:03,273 -  * Debugger PIN: 426-763-970
+2024-08-21 16:10:06,039 - Command: ip -j addr
+2024-08-21 16:10:06,039 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:10:06,041 - Command: tc qdisc show dev eth0
+2024-08-21 16:10:06,041 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:10:06,042 - Command: tc qdisc show dev eth0
+2024-08-21 16:10:06,043 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:10:06,045 - Command: tc class show dev eth0
+2024-08-21 16:10:06,045 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:10:06,052 - Command: ethtool eth0
+2024-08-21 16:10:06,052 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:10:06,056 - 127.0.0.1 - - [21/Aug/2024 16:10:06] "GET / HTTP/1.1" 200 -
+2024-08-21 16:10:06,079 - 127.0.0.1 - - [21/Aug/2024 16:10:06] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:10:08,263 - Command: ip -j addr
+2024-08-21 16:10:08,263 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:10:08,264 - Command: tc qdisc show dev eth0
+2024-08-21 16:10:08,264 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:10:08,265 - Command: tc qdisc show dev eth0
+2024-08-21 16:10:08,265 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:10:08,266 - Command: tc class show dev eth0
+2024-08-21 16:10:08,266 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:10:08,271 - Command: ethtool eth0
+2024-08-21 16:10:08,271 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:10:08,271 - 127.0.0.1 - - [21/Aug/2024 16:10:08] "GET / HTTP/1.1" 200 -
+2024-08-21 16:10:08,282 - 127.0.0.1 - - [21/Aug/2024 16:10:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:13:56,099 - Command: ip -j addr
+2024-08-21 16:13:56,099 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:13:56,100 - Command: tc qdisc show dev eth0
+2024-08-21 16:13:56,101 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:13:56,102 - Command: tc qdisc show dev eth0
+2024-08-21 16:13:56,102 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:13:56,103 - Command: tc class show dev eth0
+2024-08-21 16:13:56,103 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:13:56,108 - Command: ethtool eth0
+2024-08-21 16:13:56,108 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:13:56,110 - 127.0.0.1 - - [21/Aug/2024 16:13:56] "GET / HTTP/1.1" 200 -
+2024-08-21 16:13:56,121 - 127.0.0.1 - - [21/Aug/2024 16:13:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:17:10,042 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:17:10,042 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:17:10,042 -  * Restarting with stat
+2024-08-21 16:17:10,129 -  * Debugger is active!
+2024-08-21 16:17:10,130 -  * Debugger PIN: 426-763-970
+2024-08-21 16:17:12,758 - Command: ip -j addr
+2024-08-21 16:17:12,758 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:17:12,759 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:12,759 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:12,761 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:12,761 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:12,762 - Command: tc class show dev eth0
+2024-08-21 16:17:12,762 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:17:12,769 - Command: ethtool eth0
+2024-08-21 16:17:12,769 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:17:12,772 - 127.0.0.1 - - [21/Aug/2024 16:17:12] "GET / HTTP/1.1" 200 -
+2024-08-21 16:17:12,791 - 127.0.0.1 - - [21/Aug/2024 16:17:12] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:17:17,247 - Command: ip -j addr
+2024-08-21 16:17:17,248 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:17:17,249 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:17,249 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:17,250 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:17,250 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:17,251 - Command: tc class show dev eth0
+2024-08-21 16:17:17,251 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:17:17,255 - Command: ethtool eth0
+2024-08-21 16:17:17,255 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:17:17,255 - 127.0.0.1 - - [21/Aug/2024 16:17:17] "GET / HTTP/1.1" 200 -
+2024-08-21 16:17:17,268 - 127.0.0.1 - - [21/Aug/2024 16:17:17] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:17:17,273 - 127.0.0.1 - - [21/Aug/2024 16:17:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-21 16:17:18,208 - Command: ip -j addr
+2024-08-21 16:17:18,208 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:17:18,210 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:18,210 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:18,211 - Command: tc qdisc show dev eth0
+2024-08-21 16:17:18,211 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:17:18,212 - Command: tc class show dev eth0
+2024-08-21 16:17:18,212 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:17:18,217 - Command: ethtool eth0
+2024-08-21 16:17:18,217 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:17:18,217 - 127.0.0.1 - - [21/Aug/2024 16:17:18] "GET / HTTP/1.1" 200 -
+2024-08-21 16:17:18,228 - 127.0.0.1 - - [21/Aug/2024 16:17:18] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:17:18,233 - 127.0.0.1 - - [21/Aug/2024 16:17:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-21 16:17:57,169 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:17:57,169 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:17:57,170 -  * Restarting with stat
+2024-08-21 16:17:57,255 -  * Debugger is active!
+2024-08-21 16:17:57,255 -  * Debugger PIN: 426-763-970
+2024-08-21 16:18:00,996 - Command: ip -j addr
+2024-08-21 16:18:00,996 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:18:00,998 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:00,998 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:01,000 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:01,000 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:01,002 - Command: tc class show dev eth0
+2024-08-21 16:18:01,002 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:18:01,008 - Command: ethtool eth0
+2024-08-21 16:18:01,008 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:18:01,014 - 127.0.0.1 - - [21/Aug/2024 16:18:01] "GET / HTTP/1.1" 200 -
+2024-08-21 16:18:01,029 - 127.0.0.1 - - [21/Aug/2024 16:18:01] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:18:03,097 - Command: ip -j addr
+2024-08-21 16:18:03,098 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:18:03,099 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:03,099 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:03,100 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:03,100 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:03,101 - Command: tc class show dev eth0
+2024-08-21 16:18:03,101 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:18:03,105 - Command: ethtool eth0
+2024-08-21 16:18:03,105 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:18:03,106 - 127.0.0.1 - - [21/Aug/2024 16:18:03] "GET / HTTP/1.1" 200 -
+2024-08-21 16:18:03,121 - 127.0.0.1 - - [21/Aug/2024 16:18:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:18:03,818 - Command: ip -j addr
+2024-08-21 16:18:03,818 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:18:03,819 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:03,819 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:03,820 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:03,820 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:03,821 - Command: tc class show dev eth0
+2024-08-21 16:18:03,821 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:18:03,826 - Command: ethtool eth0
+2024-08-21 16:18:03,827 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:18:03,827 - 127.0.0.1 - - [21/Aug/2024 16:18:03] "GET / HTTP/1.1" 200 -
+2024-08-21 16:18:03,841 - 127.0.0.1 - - [21/Aug/2024 16:18:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:18:04,370 - Command: ip -j addr
+2024-08-21 16:18:04,370 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:18:04,371 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:04,371 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:04,372 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:04,372 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:04,373 - Command: tc class show dev eth0
+2024-08-21 16:18:04,373 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:18:04,377 - Command: ethtool eth0
+2024-08-21 16:18:04,377 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:18:04,378 - 127.0.0.1 - - [21/Aug/2024 16:18:04] "GET / HTTP/1.1" 200 -
+2024-08-21 16:18:04,389 - 127.0.0.1 - - [21/Aug/2024 16:18:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:18:04,908 - Command: ip -j addr
+2024-08-21 16:18:04,908 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:18:04,910 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:04,910 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:04,911 - Command: tc qdisc show dev eth0
+2024-08-21 16:18:04,911 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:18:04,912 - Command: tc class show dev eth0
+2024-08-21 16:18:04,912 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:18:04,917 - Command: ethtool eth0
+2024-08-21 16:18:04,917 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:18:04,917 - 127.0.0.1 - - [21/Aug/2024 16:18:04] "GET / HTTP/1.1" 200 -
+2024-08-21 16:18:04,927 - 127.0.0.1 - - [21/Aug/2024 16:18:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:20:13,954 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:20:13,954 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:20:13,954 -  * Restarting with stat
+2024-08-21 16:20:14,041 -  * Debugger is active!
+2024-08-21 16:20:14,041 -  * Debugger PIN: 426-763-970
+2024-08-21 16:20:17,094 - Command: ip -j addr
+2024-08-21 16:20:17,094 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:20:17,096 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:17,096 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:17,097 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:17,097 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:17,098 - Command: tc class show dev eth0
+2024-08-21 16:20:17,098 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:20:17,103 - Command: ethtool eth0
+2024-08-21 16:20:17,104 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:20:17,109 - 127.0.0.1 - - [21/Aug/2024 16:20:17] "GET / HTTP/1.1" 200 -
+2024-08-21 16:20:17,124 - 127.0.0.1 - - [21/Aug/2024 16:20:17] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:20:18,752 - Command: ip -j addr
+2024-08-21 16:20:18,752 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:20:18,753 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:18,754 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:18,755 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:18,755 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:18,756 - Command: tc class show dev eth0
+2024-08-21 16:20:18,756 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:20:18,761 - Command: ethtool eth0
+2024-08-21 16:20:18,761 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:20:18,762 - 127.0.0.1 - - [21/Aug/2024 16:20:18] "GET / HTTP/1.1" 200 -
+2024-08-21 16:20:18,775 - 127.0.0.1 - - [21/Aug/2024 16:20:18] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:20:19,746 - Command: ip -j addr
+2024-08-21 16:20:19,746 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:20:19,747 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:19,747 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:19,748 - Command: tc qdisc show dev eth0
+2024-08-21 16:20:19,748 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:20:19,749 - Command: tc class show dev eth0
+2024-08-21 16:20:19,749 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:20:19,753 - Command: ethtool eth0
+2024-08-21 16:20:19,753 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:20:19,754 - 127.0.0.1 - - [21/Aug/2024 16:20:19] "GET / HTTP/1.1" 200 -
+2024-08-21 16:20:19,763 - 127.0.0.1 - - [21/Aug/2024 16:20:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-08-21 16:21:07,887 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:21:07,887 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:21:07,887 -  * Restarting with stat
+2024-08-21 16:21:07,975 -  * Debugger is active!
+2024-08-21 16:21:07,975 -  * Debugger PIN: 426-763-970
+2024-08-21 16:21:11,872 - Command: ip -j addr
+2024-08-21 16:21:11,873 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:21:11,874 - Command: tc qdisc show dev eth0
+2024-08-21 16:21:11,874 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:21:11,875 - Command: tc qdisc show dev eth0
+2024-08-21 16:21:11,875 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:21:11,878 - Command: tc class show dev eth0
+2024-08-21 16:21:11,878 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:21:11,883 - Command: ethtool eth0
+2024-08-21 16:21:11,883 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:21:11,887 - 127.0.0.1 - - [21/Aug/2024 16:21:11] "GET / HTTP/1.1" 200 -
+2024-08-21 16:21:11,908 - 127.0.0.1 - - [21/Aug/2024 16:21:11] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:21:45,034 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:21:45,034 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:21:45,035 -  * Restarting with stat
+2024-08-21 16:21:45,122 -  * Debugger is active!
+2024-08-21 16:21:45,123 -  * Debugger PIN: 426-763-970
+2024-08-21 16:21:48,998 - Command: ip -j addr
+2024-08-21 16:21:48,999 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:21:49,000 - Command: tc qdisc show dev eth0
+2024-08-21 16:21:49,000 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:21:49,001 - Command: tc qdisc show dev eth0
+2024-08-21 16:21:49,001 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:21:49,003 - Command: tc class show dev eth0
+2024-08-21 16:21:49,003 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:21:49,012 - Command: ethtool eth0
+2024-08-21 16:21:49,012 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:21:49,015 - 127.0.0.1 - - [21/Aug/2024 16:21:49] "GET / HTTP/1.1" 200 -
+2024-08-21 16:21:49,032 - 127.0.0.1 - - [21/Aug/2024 16:21:49] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:22:22,924 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:22:22,924 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:22:22,924 -  * Restarting with stat
+2024-08-21 16:22:23,012 -  * Debugger is active!
+2024-08-21 16:22:23,012 -  * Debugger PIN: 426-763-970
+2024-08-21 16:22:27,450 - Command: ip -j addr
+2024-08-21 16:22:27,450 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:22:27,451 - Command: tc qdisc show dev eth0
+2024-08-21 16:22:27,451 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:22:27,452 - Command: tc qdisc show dev eth0
+2024-08-21 16:22:27,452 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:22:27,453 - Command: tc class show dev eth0
+2024-08-21 16:22:27,453 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:22:27,459 - Command: ethtool eth0
+2024-08-21 16:22:27,459 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:22:27,463 - 127.0.0.1 - - [21/Aug/2024 16:22:27] "GET / HTTP/1.1" 200 -
+2024-08-21 16:22:27,490 - 127.0.0.1 - - [21/Aug/2024 16:22:27] "GET /static/style.css HTTP/1.1" 200 -
+2024-08-21 16:30:36,110 -  * Detected change in '/home/hyyperlite/dev/hyyper_wanem/app.py', reloading
+2024-08-21 16:30:36,129 -  * Restarting with stat
+2024-08-21 16:30:36,210 -  * Debugger is active!
+2024-08-21 16:30:36,210 -  * Debugger PIN: 426-763-970
+2024-08-21 16:30:43,150 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.25.1.47:8080
+2024-08-21 16:30:43,150 - [33mPress CTRL+C to quit[0m
+2024-08-21 16:30:43,150 -  * Restarting with stat
+2024-08-21 16:30:43,239 -  * Debugger is active!
+2024-08-21 16:30:43,239 -  * Debugger PIN: 426-763-970
+2024-08-21 16:30:46,562 - Command: ip -j addr
+2024-08-21 16:30:46,562 - Output: [{"ifindex":1,"ifname":"lo","flags":["LOOPBACK","UP","LOWER_UP"],"mtu":65536,"qdisc":"noqueue","operstate":"UNKNOWN","group":"default","txqlen":1000,"link_type":"loopback","address":"00:00:00:00:00:00","broadcast":"00:00:00:00:00:00","addr_info":[{"family":"inet","local":"127.0.0.1","prefixlen":8,"scope":"host","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet","local":"10.255.255.254","prefixlen":32,"broadcast":"10.255.255.254","scope":"global","label":"lo","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"::1","prefixlen":128,"scope":"host","valid_life_time":4294967295,"preferred_life_time":4294967295}]},{"ifindex":2,"ifname":"eth0","flags":["BROADCAST","MULTICAST","UP","LOWER_UP"],"mtu":1392,"qdisc":"mq","operstate":"UP","group":"default","txqlen":1000,"link_type":"ether","address":"00:15:5d:98:0e:16","broadcast":"ff:ff:ff:ff:ff:ff","addr_info":[{"family":"inet","local":"172.25.1.47","prefixlen":20,"broadcast":"172.25.15.255","scope":"global","label":"eth0","valid_life_time":4294967295,"preferred_life_time":4294967295},{"family":"inet6","local":"fe80::215:5dff:fe98:e16","prefixlen":64,"scope":"link","valid_life_time":4294967295,"preferred_life_time":4294967295}]}]
+
+2024-08-21 16:30:46,563 - Command: tc qdisc show dev eth0
+2024-08-21 16:30:46,563 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:30:46,565 - Command: tc qdisc show dev eth0
+2024-08-21 16:30:46,565 - Output: qdisc mq 0: root 
+qdisc fq_codel 0: parent :8 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :7 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :6 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :5 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :4 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :3 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :2 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+qdisc fq_codel 0: parent :1 limit 10240p flows 1024 quantum 1514 target 5ms interval 100ms memory_limit 32Mb ecn drop_batch 64 
+
+2024-08-21 16:30:46,566 - Command: tc class show dev eth0
+2024-08-21 16:30:46,566 - Output: class mq :1 root 
+class mq :2 root 
+class mq :3 root 
+class mq :4 root 
+class mq :5 root 
+class mq :6 root 
+class mq :7 root 
+class mq :8 root 
+class mq :9 root 
+class mq :a root 
+class mq :b root 
+class mq :c root 
+class mq :d root 
+class mq :e root 
+class mq :f root 
+class mq :10 root 
+class mq :11 root 
+class mq :12 root 
+class mq :13 root 
+class mq :14 root 
+class mq :15 root 
+class mq :16 root 
+class mq :17 root 
+class mq :18 root 
+class mq :19 root 
+class mq :1a root 
+class mq :1b root 
+class mq :1c root 
+class mq :1d root 
+class mq :1e root 
+class mq :1f root 
+class mq :20 root 
+class mq :21 root 
+class mq :22 root 
+class mq :23 root 
+class mq :24 root 
+class mq :25 root 
+class mq :26 root 
+class mq :27 root 
+class mq :28 root 
+class mq :29 root 
+class mq :2a root 
+class mq :2b root 
+class mq :2c root 
+class mq :2d root 
+class mq :2e root 
+class mq :2f root 
+class mq :30 root 
+class mq :31 root 
+class mq :32 root 
+class mq :33 root 
+class mq :34 root 
+class mq :35 root 
+class mq :36 root 
+class mq :37 root 
+class mq :38 root 
+class mq :39 root 
+class mq :3a root 
+class mq :3b root 
+class mq :3c root 
+class mq :3d root 
+class mq :3e root 
+class mq :3f root 
+class mq :40 root 
+
+2024-08-21 16:30:46,571 - Command: ethtool eth0
+2024-08-21 16:30:46,572 - Output: Settings for eth0:
+	Supported ports: [ ]
+	Supported link modes:   Not reported
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Other
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	Current message level: 0x000000f7 (247)
+			       drv probe link ifdown ifup rx_err tx_err
+	Link detected: yes
+
+2024-08-21 16:30:46,576 - 127.0.0.1 - - [21/Aug/2024 16:30:46] "GET / HTTP/1.1" 200 -
+2024-08-21 16:30:46,591 - 127.0.0.1 - - [21/Aug/2024 16:30:46] "GET /static/style.css HTTP/1.1" 200 -
