@@ -1,10 +1,9 @@
+import logging
 import subprocess
-import json
 import re
-import os
+import json
 from flask import Flask, render_template, request, redirect, url_for, flash
 from dotenv import load_dotenv
-import logging
 
 load_dotenv()  # Load environment variables from .env
 app = Flask(__name__)
@@ -56,7 +55,6 @@ def get_loss(interface):
     match = re.search(r'loss (\d+)%', output)
     return match.group(1) + '%' if match else '0%'
 
-
 def get_bandwidth(interface):
     result = subprocess.run(['tc', 'class', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
@@ -70,7 +68,7 @@ def get_bandwidth(interface):
             result = subprocess.run(['ethtool', interface], capture_output=True, text=True, check=True)
             output = result.stdout
             log_command(['ethtool', interface], output)
-            match = re.search(r'Speed: (\d+)Mb/s', output)  # Corrected regex pattern
+            match = re.search(r'Speed: (\d+)Mb/s', output)
             if match:
                 bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
             else:
@@ -87,7 +85,6 @@ def get_bandwidth(interface):
     }
     return bandwidth
 
-
 def get_qdisc_settings(interface):
     result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
@@ -98,7 +95,7 @@ def get_qdisc_settings(interface):
     loss = loss_match.group(1) + '%' if loss_match else '0%'
     return latency, loss
 
-def apply_qdisc(interface, latency=None, loss=None):
+def apply_qdisc(interface, latency=None, loss=None, bandwidth=None):
     current_latency, current_loss = get_qdisc_settings(interface)
     
     # Ensure latency is in milliseconds
@@ -108,7 +105,11 @@ def apply_qdisc(interface, latency=None, loss=None):
     latency = latency if latency else current_latency
     loss = loss if loss else current_loss
 
-    command = ['sudo', 'tc', 'qdisc', 'replace', 'dev', interface, 'root', 'netem']
+    # Remove existing qdisc settings
+    subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
+
+    # Apply new qdisc settings
+    command = ['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'netem']
     if latency != '0ms':
         command.extend(['delay', latency])
     if loss != '0%':
@@ -118,59 +119,38 @@ def apply_qdisc(interface, latency=None, loss=None):
     log_command(command, result.stdout)
     if result.returncode != 0:
         flash(f"Error applying qdisc: {result.stderr}")
-        
-        
-def apply_bandwidth(interface, bandwidth):
+
     if bandwidth:
-        remove_bandwidth(interface)  # Remove existing bandwidth setting
-        result = subprocess.run(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], capture_output=True, text=True)
-        log_command(['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'root', 'handle', '1:', 'htb'], result.stdout)
-        if result.returncode != 0:
-            flash(f"Error setting up root qdisc: {result.stderr}")
-        result = subprocess.run(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], capture_output=True, text=True)
-        log_command(['sudo', 'tc', 'class', 'add', 'dev', interface, 'parent', '1:', 'classid', '1:1', 'htb', 'rate', bandwidth], result.stdout)
-        if result.returncode != 0:
-            flash(f"Error applying bandwidth: {result.stderr}")
+        apply_bandwidth(interface, bandwidth)
 
-def remove_bandwidth(interface):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'handle', '1:'], result.stdout)
+def apply_bandwidth(interface, bandwidth):
+    # Apply bandwidth settings using tbf
+    command = ['sudo', 'tc', 'qdisc', 'add', 'dev', interface, 'parent', '1:', 'handle', '10:', 'tbf', 'rate', bandwidth, 'burst', '32kbit', 'latency', '400ms']
+    result = subprocess.run(command, capture_output=True, text=True)
+    log_command(command, result.stdout)
     if result.returncode != 0:
-        flash(f"Error removing bandwidth: {result.stderr}")
-
-def remove_degradations(interface):
-    result = subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], capture_output=True, text=True)
-    log_command(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root', 'netem'], result.stdout)
-    if result.returncode != 0:
-        flash(f"Error removing qdisc: {result.stderr}")
-    remove_bandwidth(interface)
+        flash(f"Error applying bandwidth: {result.stderr}")
 
 @app.route('/')
 def index():
     interfaces = list_interfaces()
     return render_template('index.html', interfaces=interfaces)
 
-@app.route('/apply', methods=['POST'], endpoint='apply_interface')
-def apply():
-    interface = request.form['interface'].split(' ')[0]  # Extract the interface name
+@app.route('/apply_interface', methods=['POST'])
+def apply_interface():
+    interface = request.form['interface']
     latency = request.form.get('latency')
     loss = request.form.get('loss')
     bandwidth = request.form.get('bandwidth')
-    
-    if latency or loss:
-        apply_qdisc(interface, latency, loss)
-    if bandwidth:
-        apply_bandwidth(interface, bandwidth)
-    
+    apply_qdisc(interface, latency, loss, bandwidth)
     return redirect(url_for('index'))
 
-@app.route('/remove', methods=['POST'], endpoint='remove_interface')
-def remove():
-    interface = request.form['interface'].split(' ')[0]  # Extract the interface name
-    remove_degradations(interface)
+@app.route('/remove_interface', methods=['POST'])
+def remove_interface():
+    interface = request.form['interface']
+    # Remove qdisc settings
+    subprocess.run(['sudo', 'tc', 'qdisc', 'del', 'dev', interface, 'root'], capture_output=True, text=True)
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    host = os.getenv('FLASK_RUN_HOST', '0.0.0.0')
-    port = int(os.getenv('FLASK_RUN_PORT', 8080))
-    app.run(host=host, port=port, debug=True)
+    app.run(debug=True)
