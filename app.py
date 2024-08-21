@@ -56,6 +56,7 @@ def get_loss(interface):
     match = re.search(r'loss (\d+)%', output)
     return match.group(1) + '%' if match else '0%'
 
+
 def get_bandwidth(interface):
     result = subprocess.run(['tc', 'class', 'show', 'dev', interface], capture_output=True, text=True)
     output = result.stdout
@@ -73,11 +74,11 @@ def get_bandwidth(interface):
             if match:
                 bandwidth_kbit = int(match.group(1)) * 1000  # Convert Mb/s to Kbit
             else:
-                return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
+                return 'N/A'
         except (subprocess.CalledProcessError, FileNotFoundError) as e:
             # ethtool is not installed or failed to run
             log_command(['ethtool', interface], str(e))
-            return {'Kb': 'N/A', 'Mb': 'N/A', 'Gb': 'N/A'}
+            return 'N/A'
 
     bandwidth = {
         'Kb': f"{bandwidth_kbit} Kb",
@@ -85,6 +86,7 @@ def get_bandwidth(interface):
         'Gb': f"{round(bandwidth_kbit / 1000000)} Gb"
     }
     return bandwidth
+
 
 def get_qdisc_settings(interface):
     result = subprocess.run(['tc', 'qdisc', 'show', 'dev', interface], capture_output=True, text=True)
